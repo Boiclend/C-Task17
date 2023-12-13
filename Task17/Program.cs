@@ -7,6 +7,7 @@ findMin(text); // вызов функции
 
 void findMin(string txt) { // функция поиска минимального слова по длине
     string[] words = text.Split(' '); // разбиение строки по словам 
+    int temp = 0;
     string minText = words[1];
         for (int i = 0; i < words.Length; i++)
         {
@@ -14,5 +15,12 @@ void findMin(string txt) { // функция поиска минимальног
                 minText = words[i];
             }
         }
-    Console.WriteLine($"Самое маленькое слово в строке: {minText}");
+        for (int i = 0; i < words.Length; i++)
+        {
+            if(minText == words[i]) {
+                temp = i + 1;
+                Console.WriteLine($"Самое короткое слово в строке под номером {temp}: {minText}");
+            } 
+        }
+    
 }
