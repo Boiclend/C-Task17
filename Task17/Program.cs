@@ -9,18 +9,14 @@ void findMin(string txt) { // функция поиска минимальног
     string[] words = text.Split(' '); // разбиение строки по словам 
     int temp = 0;
     string minText = words[1];
-        for (int i = 0; i < words.Length; i++)
+    for (int i = 0; i < words.Length; i++)
+    {
+        if(minText.Length > words[i].Length)
         {
-            if(minText.Length > words[i].Length) {
-                minText = words[i];
-            }
+            minText = words[i];
+            temp = i;
         }
-        for (int i = 0; i < words.Length; i++)
-        {
-            if(minText == words[i]) {
-                temp = i + 1;
-                Console.WriteLine($"Самое короткое слово в строке под номером {temp}: {minText}");
-            } 
-        }
+    }
+    Console.WriteLine($"Самое короткое слово в строке под номером {temp + 1}: {minText}");
     
 }
